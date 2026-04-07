@@ -1,0 +1,122 @@
+/* ─── STYLING IN REACT: GLOBAL CSS ──────────────────────────────
+   This file contains:
+   1. CSS Variables  – reusable values for colours, fonts, spacing
+                       (change one variable = changes everywhere)
+   2. Base reset     – consistent defaults across browsers
+   3. Utility classes – shared styles used across multiple pages
+   ─────────────────────────────────────────────────────────────── */
+
+/* ── CSS CUSTOM PROPERTIES (Variables) ─────────────────────────── */
+:root {
+  --bg-primary:   #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card:      #1a1a26;
+  --bg-hover:     #22223a;
+  --accent:       #7c6aff;
+  --accent-light: #a89dff;
+  --accent-glow:  rgba(124, 106, 255, 0.25);
+  --text-primary:   #f0eeff;
+  --text-secondary: #9490b5;
+  --text-muted:     #5a5875;
+  --border:         rgba(124, 106, 255, 0.15);
+  --border-hover:   rgba(124, 106, 255, 0.4);
+  --danger:   #ff5a7a;
+  --warning:  #ffb347;
+  --success:  #4dd9ac;
+  --priority-high:   #ff5a7a;
+  --priority-medium: #ffb347;
+  --priority-low:    #4dd9ac;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow:        0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-accent: 0 8px 32px rgba(124, 106, 255, 0.2);
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --transition:   0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── RESET ────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); line-height: 1.2; }
+a  { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--font-body); border: none; outline: none; }
+input, textarea, select { font-family: var(--font-body); }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* ── UTILITY CLASSES ─────────────────────────────────────────── */
+.page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-accent);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-secondary:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+/* Priority badge – used via className="badge badge-high" etc. */
+.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 100px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.badge-high   { background: rgba(255,90,122,0.15); color: var(--priority-high); }
+.badge-medium { background: rgba(255,179,71,0.15); color: var(--priority-medium); }
+.badge-low    { background: rgba(77,217,172,0.15); color: var(--priority-low); }
+
+.empty-state { text-align: center; padding: 4rem 2rem; color: var(--text-muted); }
+.empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
+.empty-state h3 { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+.empty-state p  { font-size: 0.9rem; }
+
+/* ── ANIMATIONS ─────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up { animation: fadeInUp 0.4s ease forwards; }

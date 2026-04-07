@@ -1,0 +1,146 @@
+.back {
+  margin-bottom: 1.5rem;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.colorBar {
+  width: 5px;
+  height: 52px;
+  border-radius: 100px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.projectTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.projectDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.progressSection {
+  margin-bottom: 1.75rem;
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.progressTrack {
+  height: 6px;
+  background: var(--bg-hover);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 0.6s ease;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filterTabs {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  gap: 2px;
+}
+
+.filterTab {
+  background: none;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.filterTab:hover {
+  color: var(--text-primary);
+}
+
+.filterTab.filterActive {
+  background: var(--accent);
+  color: #fff;
+}
+
+.form {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.select {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.formRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
